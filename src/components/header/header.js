@@ -1,6 +1,5 @@
 import "./header.css";
 import Image from "next/image";
-import LinkedIn from "../../assets/linkedin.svg";
 
 const Header = () => {
   return (
@@ -10,13 +9,6 @@ const Header = () => {
         <h1 className="px-2 my-auto relative w-[max-content] font-mono text-2xl before:absolute before:inset-0 before:animate-typewriter before:bg-white after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black">
           Mohit Yadav
         </h1>
-        <a
-          className="ml-auto my-auto"
-          href="https://www.linkedin.com/in/mohit-yadav-181bb9136/"
-          target="_blank"
-        >
-          <Image className="w-10 h-10" src={LinkedIn} alt="linkedin logo" />
-        </a>
       </div>
     </nav>
   );
