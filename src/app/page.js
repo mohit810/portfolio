@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen flex flex-col">
+    <main className="w-screen h-full flex flex-col">
       <LinkedInFab />
       <div className="w-full h-full bg-yellow-500">
         <IntroPage />

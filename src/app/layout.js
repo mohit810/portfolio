@@ -12,9 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="text-black bg-white grid grid-cols-1">
+      <body className="text-black h-screen w-screen bg-white grid grid-cols-1">
         <Header />
-        <div className={"pt-24 px-6 " + inter.className}>{children}</div>
+        <div className={"pt-20 h-full overflow-auto " + inter.className}>
+          {children}
+        </div>
       </body>
     </html>
   );
