@@ -12,9 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className + " text-black"}>
+      <body className="text-black bg-white grid grid-cols-1">
         <Header />
-        {children}
+        <div className={"pt-24 px-6 " + inter.className}>{children}</div>
       </body>
     </html>
   );
