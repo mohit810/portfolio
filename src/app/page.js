@@ -1,5 +1,5 @@
-import IntroPage from "@/components/intro/IntroPage";
-import LinkedInFab from "@/components/linkedInFab/LinkedInFab";
+import IntroPage from "@/app/[...components]/intro/IntroPage";
+import LinkedInFab from "@/app/[...components]/linkedInFab/LinkedInFab";
 import Image from "next/image";
 
 export default function Home() {

@@ -1,4 +1,4 @@
-import LinkedIn from "../../assets/linkedin.svg";
+import LinkedIn from "../../../assets/linkedin.svg";
 import Image from "next/image";
 
 const LinkedInFab = () => {
