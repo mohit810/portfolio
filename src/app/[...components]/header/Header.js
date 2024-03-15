@@ -17,16 +17,12 @@ const Header = () => {
     return () => clearTimeout(timeout);
   }, [text1]);
 
-  useEffect(() => {
-    console.log(pathName.split("/")[1]);
-  }, [pathName]);
-
   const paths = [
     { title: "About", url: "/" },
     { title: "Education", url: "/education" },
     { title: "Experience", url: "/experience" },
     { title: "Projects", url: "/projects" },
-    { title: "Technologies", url: "/technologies" },
+    { title: "Tech Stack", url: "/tech-stack" },
   ];
 
   const renderPaths = () => {
@@ -42,14 +38,16 @@ const Header = () => {
           <div className="w-14 h-14 my-auto mx-10 bg-yellow-300 rounded-full" />
           <h1 className="my-auto text-2xl blinking-cursor">{text1}</h1>
         </div>
-        <div className="grid grid-cols-5 justify-items-center">
+        <div className="w-full basis-1/2 grid grid-cols-5 justify-items-center">
           {paths.map((path) => (
             <Link
               href={path.url}
               key={path.title}
               className={classNames(
                 "",
-                pathName === path.url ? "text-cyan-500" : ""
+                pathName === path.url
+                  ? "text-cyan-500 border-b-2 border-cyan-500"
+                  : ""
               )}
             >
               {path.title}
