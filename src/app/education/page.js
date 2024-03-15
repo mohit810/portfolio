@@ -26,7 +26,7 @@ export default function Education() {
   return (
     <div className="w-screen h-full p-10 bg-cyan-800">
       <div className="flex flex-col items-start">
-        <div className="text-white text-xl w-full border-b-2 font-semibold">
+        <div className="text-white text-3xl w-full border-b-2 font-semibold">
           Education
         </div>
         <div className="py-2 w-full grid grid-cols-2 justify-items-center">
