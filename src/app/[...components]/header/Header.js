@@ -4,16 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { classNames } from "../helper/CommonFunctions";
 
 const Header = () => {
   const first_text = "Mohit Yadav";
   const [text1, setText1] = useState("");
+  const pathName = usePathname();
   useEffect(() => {
     const timeout = setTimeout(() => {
       setText1(first_text.slice(0, text1.length + 1));
     }, 100);
     return () => clearTimeout(timeout);
   }, [text1]);
+
+  useEffect(() => {
+    console.log(pathName.split("/")[1]);
+  }, [pathName]);
 
   const paths = [
     { title: "About", url: "/" },
@@ -38,7 +44,14 @@ const Header = () => {
         </div>
         <div className="grid grid-cols-5 justify-items-center">
           {paths.map((path) => (
-            <Link href={path.url} key={path.title}>
+            <Link
+              href={path.url}
+              key={path.title}
+              className={classNames(
+                "",
+                pathName === path.url ? "text-cyan-500" : ""
+              )}
+            >
               {path.title}
             </Link>
           ))}
