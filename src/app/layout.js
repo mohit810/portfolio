@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/[...components]/header/Header";
+import LinkedInFab from "./[...components]/linkedInFab/LinkedInFab";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,10 @@ export default function RootLayout({ children }) {
       <body className="text-black h-screen w-screen bg-white grid grid-cols-1">
         <Header />
         <div className={"pt-20 h-full overflow-auto " + inter.className}>
-          {children}
+          <div className="w-screen h-full flex flex-col">
+            <LinkedInFab />
+            <div className="w-full h-full bg-yellow-500">{children}</div>
+          </div>
         </div>
       </body>
     </html>
