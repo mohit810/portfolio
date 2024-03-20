@@ -8,18 +8,26 @@ export default function Experience() {
   const experiences = [
     {
       name: "Zetwerk Manufacturing Businesses PVT LTD",
-      Designation: "Software Developer Engineer",
-      duration: "Dec 2021 - March 2023",
-      address:
-        "ORIENTAL TOWERS NO 461,4TH SECTOR, 17TH CROSS, HSR LAYOUT, BENGALURU, KARNATAKA 560102, INDIA",
       image: Zetwerk,
+      details: {
+        Designation: "Software Developer Engineer",
+        Duration: "Dec 2021 - March 2023",
+        Address:
+          "ORIENTAL TOWERS NO 461,4TH SECTOR, 17TH CROSS, HSR LAYOUT, BENGALURU, KARNATAKA 560102, INDIA",
+      },
+      displayButton: true,
+      button: "Projects",
     },
     {
       name: "Bristlecone (Mahindra Group of Companies)",
-      Designation: "Associate Consultant",
-      duration: "July 2020 - Dec 2021",
-      address: "250 W Pender St, Vancouver, BC V6B 1S9",
       image: Bristlecone,
+      details: {
+        Designation: "Associate Consultant",
+        Duration: "July 2020 - Dec 2021",
+        Address: "250 W Pender St, Vancouver, BC V6B 1S9",
+      },
+      displayButton: true,
+      button: "Projects",
     },
   ];
   return (
