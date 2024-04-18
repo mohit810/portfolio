@@ -6,11 +6,12 @@ import { classNames } from "../[...components]/helper/CommonFunctions";
 import { ChevronLeft, ChevronRight } from "react-feather";
 import DetailsCard from "../[...components]/Cards/DetailsCard";
 import ExpCard from "../[...components]/Cards/ExpCard";
-import Carousel from "../[...components]/carousel/Carousel";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { useRef } from "react";
 
 export default function Experience() {
+  const carouselRef = useRef(null);
   const experiences = [
     {
       name: "Zetwerk Manufacturing Businesses PVT LTD",
@@ -65,7 +66,19 @@ export default function Experience() {
             controlsStrategy={"default"}
             mouseTracking
             items={items}
+            ref={carouselRef}
           />
+        </div>
+        <div
+          className="b-refs-buttons absolute px-48 top-0 h-full w-full justify-between items-center flex text-white text-3xl"
+          key="btns"
+        >
+          <button onClick={(e) => carouselRef?.current?.slidePrev(e)}>
+            <ChevronLeft />
+          </button>
+          <button onClick={(e) => carouselRef?.current?.slideNext(e)}>
+            <ChevronRight />
+          </button>
         </div>
       </div>
     </div>
