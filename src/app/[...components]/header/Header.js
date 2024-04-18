@@ -22,7 +22,7 @@ const Header = () => {
     { title: "Education", url: "/education" },
     { title: "Experience", url: "/experience" },
     { title: "Projects", url: "/projects" },
-    { title: "Tech Stack", url: "/tech-stack" },
+    { title: "Tech Stack", url: "/techStack" },
   ];
 
   const renderPaths = () => {
@@ -32,7 +32,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="w-full h-20 fixed p-2 shadow-lg bg-white">
+    <nav className="w-full h-20 z-50 fixed p-2 shadow-lg bg-white">
       <div className="flex flex-row place-items-center ">
         <div className="basis-1/2 w-full h-full flex flex-row ">
           <div className="w-14 h-14 my-auto mx-10 bg-yellow-300 rounded-full" />

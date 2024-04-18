@@ -31,7 +31,7 @@ export default function Education() {
     },
   ];
   return (
-    <div className="w-screen h-full p-10 bg-cyan-800">
+    <div className="w-screen h-max p-10 bg-cyan-800">
       <div className="flex flex-col items-start">
         <div className="text-white text-3xl w-full border-b-2 font-semibold">
           Education

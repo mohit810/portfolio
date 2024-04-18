@@ -1,8 +1,14 @@
+"use client"; // This is a client component 👈🏽
 import Image from "next/image";
 import Zetwerk from "../../assets/zetwerk.svg";
 import Bristlecone from "../../assets/bristlecone.svg";
 import { classNames } from "../[...components]/helper/CommonFunctions";
+import { ChevronLeft, ChevronRight } from "react-feather";
 import DetailsCard from "../[...components]/Cards/DetailsCard";
+import ExpCard from "../[...components]/Cards/ExpCard";
+import Carousel from "../[...components]/carousel/Carousel";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 export default function Experience() {
   const experiences = [
@@ -30,16 +36,36 @@ export default function Experience() {
       button: "Projects",
     },
   ];
+  const handleDragStart = (e) => e.preventDefault();
+  const items = [
+    <ExpCard
+      item={experiences[0]}
+      onDragStart={handleDragStart}
+      role="presentation"
+      key={0}
+    />,
+    <ExpCard
+      item={experiences[1]}
+      onDragStart={handleDragStart}
+      role="presentation"
+      key={1}
+    />,
+  ];
   return (
-    <div className="w-screen h-full p-10 bg-cyan-800">
-      <div className="flex flex-col items-start">
-        <div className="text-white text-3xl w-full border-b-2 font-semibold">
+    <div className="w-screen h-max py-10">
+      <div className="h-full flex flex-col items-start">
+        <div className="text-white ml-4 text-3xl w-full border-b-2 font-semibold">
           Experience
         </div>
-        <div className="py-2 w-full grid grid-cols-2 justify-items-center">
-          {experiences.map((experience) => (
-            <DetailsCard key={experience.name} item={experience} />
-          ))}
+        <div className="py-2 px-10 mx-auto h-full w-1/2 grid grid-cols-1 justify-items-center">
+          <AliceCarousel
+            keyboardNavigation={true}
+            autoHeight={true}
+            disableButtonsControls
+            controlsStrategy={"default"}
+            mouseTracking
+            items={items}
+          />
         </div>
       </div>
     </div>
